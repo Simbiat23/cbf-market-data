@@ -1,0 +1,33 @@
+.marketTable {
+  border: 2;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  background: #fff;
+  color: #222;
+  
+   
+}
+.marketTable-container {
+  height: 100%;
+  overflow: auto;
+}
+.marketTable th,
+.marketTable td {
+  border: 2px solid #d4d4d4;
+  height: 40px;
+  padding: 0 10px;
+
+}
+.marketTable th {
+  font-weight: 700;
+}
+.marketTable-colLevel { width: 9%; };
+.marketTable-colQty   { width: 27.5%; };
+.marketTable-colPrice { width: 18%; };
+
+.marketTable-center { text-align: center; }
+.marketTable-right  { text-align: right; }
+.marketTable-left   { text-align: left; }
