@@ -1,5 +1,9 @@
+.marketTable-container {
+  height: 100%;
+  overflow: auto;
+}
+
 .marketTable {
-  border: 2;
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
@@ -7,13 +11,11 @@
   font-variant-numeric: tabular-nums;
   background: #fff;
   color: #222;
+  outline: magenta;
   
    
 }
-.marketTable-container {
-  height: 100%;
-  overflow: auto;
-}
+
 .marketTable th,
 .marketTable td {
   border: 2px solid #d4d4d4;
@@ -24,10 +26,38 @@
 .marketTable th {
   font-weight: 700;
 }
-.marketTable-colLevel { width: 9%; };
-.marketTable-colQty   { width: 27.5%; };
-.marketTable-colPrice { width: 18%; };
+.marketTable-colLevel { width: 9%; }
+.marketTable-colQty   { width: 27.5%; }
+.marketTable-colPrice { width: 18%; }
 
-.marketTable-center { text-align: center; }
-.marketTable-right  { text-align: right; }
-.marketTable-left   { text-align: left; }
+.marketTable-center { text-align: center }
+.marketTable-right  { text-align: right }
+.marketTable-left   { text-align: left }
+
+.marketTable-quantity {
+    position: relative;
+}
+
+.marketTable-bidBar {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 0;
+    width: 50%;
+    background-color: blue;
+
+}
+.marketTable-askBar {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 0;
+    width: 50%;
+    background-color: red;
+    
+
+}
+.marketTable-quantity span {
+    position: relative;
+    color: #fff;
+}
