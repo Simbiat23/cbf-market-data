@@ -11,7 +11,6 @@
   font-variant-numeric: tabular-nums;
   background: #fff;
   color: #222;
-  outline: magenta;
 }
 
 .marketTable th,
@@ -53,7 +52,7 @@
   bottom: 2px;
   right: 0;
   width: 50%;
-  background-color: blue;
+  background-color: #0077b3;
 }
 .marketTable-askBar {
   position: absolute;
@@ -61,27 +60,25 @@
   bottom: 2px;
   left: 0;
   width: 50%;
-  background-color: red;
+  background-color:#e3353a;
 }
 .marketTable-quantity span {
   position: relative;
   color: #fff;
 }
 
-.price {
+.marketTable-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.bid {
-  color: #6e727f;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.ask {
+.marketTable-price-ask {
   flex-direction: row-reverse;
-  color: #6b6f7a;
+ 
+}
+.marketTable-arrow {
+  font-size: 20px;
   font-weight: 700;
+  color: #6b6f7a;
 }

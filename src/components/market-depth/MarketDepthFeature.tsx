@@ -5,7 +5,7 @@ import { PriceCell } from './PriceCell'
 export const MarketDepthFeature = () => {
   const data = useMarketDepthData()
 
-// Variable used to find the higest quanity in both bid and ask
+// Variable used to find the highest quantity in both bid and ask
   const maxQuantity = Math.max(
     ...data.flatMap((row) => [row.bidQuantity, row.offerQuantity]),
   )
@@ -36,49 +36,46 @@ export const MarketDepthFeature = () => {
             <th>Quantity</th>
           </tr>
         </thead>
-        {isEmptyList ? (
-          <div>Loading</div>
-        ) : (
-          <tbody>
-            {data.map((row) => (
-              <tr key={row.symbolLevel}>
-                <td className="marketTable-center">{row.level}</td>
+        <tbody>
+            {isEmptyList ? (
+              <tr>
+                <td colSpan={5}>Loading…</td>
+            </tr>
+            ) : (
+              data.map((row) => (
+                  <tr key={row.symbolLevel}>
+                    <td className="marketTable-center">{row.level}</td>
 
-                <td className="marketTable-quantity marketTable-right">
-                  <div
-                    className="marketTable-bidBar"
-                    style={{
-                      width: `${(row.bidQuantity / maxQuantity) * 100}%`,
-                    }} 
-                  ></div>
-                  <span>{row.bidQuantity}</span>
-                </td>
+                    <td className="marketTable-quantity marketTable-right">
+                      <div
+                        className="marketTable-bidBar"
+                        style={{
+                          width: `${(row.bidQuantity / maxQuantity) * 100}%`,
+                        }} 
+                      ></div>
+                      <span>{row.bidQuantity}</span>
+                    </td>
 
-                <td>
-                  <div className="price">
-                    <PriceCell price={row.bid} side="bid" />
-                    {row.bid}{' '}
-                  </div>
-                </td>
-                <td>
-                  <div className="price">
-                    <PriceCell price={row.offer} side="ask" />
-                    {row.offer}
-                  </div>
-                </td>
-                <td className="marketTable-quantity">
-                  <div
-                    className="marketTable-askBar"
-                    style={{
-                      width: `${(row.offerQuantity / maxQuantity) * 100}%`,
-                    }}
-                  ></div>
-                  <span>{row.offerQuantity}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        )}
+                    <td>
+                        <PriceCell price={row.bid} side="bid" />
+                    </td>
+                    <td>
+                        <PriceCell price={row.offer} side="ask" />
+                    </td>
+                    <td className="marketTable-quantity">
+                      <div
+                        className="marketTable-askBar"
+                        style={{
+                          width: `${(row.offerQuantity / maxQuantity) * 100}%`,
+                        }}
+                      ></div>
+                      <span>{row.offerQuantity}</span>
+                    </td>
+                  </tr>
+                ))
+            )}
+        </tbody>
+       
       </table>
     </div>
   )

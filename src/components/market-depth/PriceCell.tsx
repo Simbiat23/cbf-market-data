@@ -18,12 +18,12 @@ export function PriceCell({ price, side }: PriceCellProps) {
     }
     if (oldPrice < newPrice) {
       return '⬆'
-    } else {
+    } else if (oldPrice > newPrice) {
       return '⬇'
     }
   }
 
   return (
-    <div className={side}>{arrowDisplay(previousPrice.current, price)}</div>
+    <div className={`marketTable-price marketTable-price-${side}`}><span className="marketTable-arrow">{arrowDisplay(previousPrice.current, price)}</span> <span>{price}</span></div>
   )
 }
