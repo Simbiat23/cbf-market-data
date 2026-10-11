@@ -12,8 +12,6 @@
   background: #fff;
   color: #222;
   outline: magenta;
-  
-   
 }
 
 .marketTable th,
@@ -21,43 +19,69 @@
   border: 2px solid #d4d4d4;
   height: 40px;
   padding: 0 10px;
-
 }
 .marketTable th {
   font-weight: 700;
 }
-.marketTable-colLevel { width: 9%; }
-.marketTable-colQty   { width: 27.5%; }
-.marketTable-colPrice { width: 18%; }
+.marketTable-colLevel {
+  width: 9%;
+}
+.marketTable-colQty {
+  width: 27.5%;
+}
+.marketTable-colPrice {
+  width: 18%;
+}
 
-.marketTable-center { text-align: center }
-.marketTable-right  { text-align: right }
-.marketTable-left   { text-align: left }
+.marketTable-center {
+  text-align: center;
+}
+.marketTable-right {
+  text-align: right;
+}
+.marketTable-left {
+  text-align: left;
+}
 
 .marketTable-quantity {
-    position: relative;
+  position: relative;
 }
 
 .marketTable-bidBar {
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    right: 0;
-    width: 50%;
-    background-color: blue;
-
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  right: 0;
+  width: 50%;
+  background-color: blue;
 }
 .marketTable-askBar {
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    left: 0;
-    width: 50%;
-    background-color: red;
-    
-
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 50%;
+  background-color: red;
 }
 .marketTable-quantity span {
-    position: relative;
-    color: #fff;
+  position: relative;
+  color: #fff;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bid {
+  color: #6e727f;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ask {
+  flex-direction: row-reverse;
+  color: #6b6f7a;
+  font-weight: 700;
 }
